@@ -32,7 +32,7 @@ jobs:
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/webapp:latest
           docker stop webapp || true
           docker rm webapp || true
-          docker run -d --name webapp -p 80:3000 \
+          docker run -d --name webapp -p 8080:3000 \
             --restart unless-stopped \
             ${{ secrets.DOCKERHUB_USERNAME }}/webapp:latest
           docker image prune -f
@@ -41,4 +41,4 @@ jobs:
         run: |
           sleep 5
           docker ps --filter "name=webapp"
-          curl -f http://localhost:80 || (echo "Web không phản hồi" && exit 1)
+          curl -f http://localhost:8080 || (echo "Web không phản hồi" && exit 1)
