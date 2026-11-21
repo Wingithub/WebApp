@@ -1,0 +1,13 @@
+{
+    "name": "webapp",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Demo Express web application",
+    "main": "web.js",
+    "scripts": {
+        "start": "node web.js"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}
